@@ -25,6 +25,11 @@ const HeroBanner = () => {
       navigate(`/search/${query}`);
     }
   };
+  const searchButtonClickHandler = () => {
+    if (query.length > 0) {
+      navigate(`/search/${query}`);
+    }
+  };
   return (
     <div className="heroBanner">
       {!loading && (
@@ -47,7 +52,7 @@ const HeroBanner = () => {
               type="text"
               placeholder="Search for a movie or TV show...."
             />
-            <button>Search</button>
+            <button onClick={searchButtonClickHandler}>Search</button>
           </div>
         </div>
       </ContentWrapper>
