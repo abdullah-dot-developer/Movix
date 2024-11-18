@@ -1,3 +1,6 @@
+
+@import "./mixins.scss";
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -59,5 +62,26 @@ body {
     100% {
       transform: translateX(100%);
     }
+  }
+}
+
+.ads {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include sm {
+    flex-direction: column;
+  }
+
+}
+
+.top-ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include md {
+
   }
 }

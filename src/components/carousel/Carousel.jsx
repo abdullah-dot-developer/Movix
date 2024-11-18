@@ -62,6 +62,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
         {!loading ? (
           <div className="carouselItems" ref={carouselContainer}>
             {data?.map((item) => {
+              // console.log(item);
               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
@@ -74,7 +75,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                   }
                 >
                   <div className="posterBlock">
-                    <Img src={posterUrl} />
+                    <Img src={posterUrl} alt={item?.title} />
                     <CircleRating rating={item.vote_average.toFixed(1)} />
                     <Genres data={item.genre_ids.slice(0, 2)} />
                   </div>
